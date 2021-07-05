@@ -13,6 +13,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchBar: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.isHidden = true
         // Do any additional setup after loading the view.
     }
 
