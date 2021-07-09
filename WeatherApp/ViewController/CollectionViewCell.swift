@@ -9,4 +9,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var temp: UILabel!
+    @IBOutlet weak var icon: UIImageView!
 }

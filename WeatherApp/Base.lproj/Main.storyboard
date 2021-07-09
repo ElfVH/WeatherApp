@@ -31,7 +31,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="TNV-cf-fmx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="address-level2"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -213,6 +213,9 @@
                                     </segment>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
+                                <connections>
+                                    <action selector="tempChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xba-vY-qAV"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -241,7 +244,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cityLabel" destination="uHk-xv-TZY" id="7pR-Wg-By4"/>
+                        <outlet property="conditionImageView" destination="VIO-Xh-GEh" id="Erj-DD-JAb"/>
+                        <outlet property="conditionLabel" destination="cMZ-3q-by9" id="66z-hs-a6G"/>
+                        <outlet property="dateLabel" destination="TVh-dy-aP5" id="OLM-an-cUb"/>
+                        <outlet property="humidityLabel" destination="560-D3-dtw" id="Kq6-Md-Egr"/>
                         <outlet property="searchBar" destination="Sdj-WD-I3g" id="Eke-RQ-Ipv"/>
+                        <outlet property="searchTextField" destination="aXU-ey-Loc" id="o9b-Rd-IhD"/>
+                        <outlet property="segmentBar" destination="yKv-iU-vYb" id="Fay-iP-1lF"/>
+                        <outlet property="tempLabel" destination="xBI-oP-NIu" id="iYC-Gt-Ero"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -290,7 +301,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDQ-WA-C1B">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDQ-WA-C1B">
                                                                 <rect key="frame" x="44" y="0.0" width="40" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4aJ-Yd-5XD"/>
@@ -308,7 +319,7 @@
                                                                     <constraint firstAttribute="height" constant="40" id="qyx-eo-vpz"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33.4 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-Yz-0r5">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33.4 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-Yz-0r5">
                                                                 <rect key="frame" x="48.5" y="118" width="31" height="10"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="31" id="ZRK-yd-hm6"/>
@@ -328,6 +339,11 @@
                                                             <constraint firstItem="ecG-Yz-0r5" firstAttribute="centerX" secondItem="lW3-hH-PLm" secondAttribute="centerX" id="qW1-aG-mNc"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
+                                                    <connections>
+                                                        <outlet property="icon" destination="j7p-mR-rba" id="FdH-qF-fbe"/>
+                                                        <outlet property="temp" destination="ecG-Yz-0r5" id="9gy-jw-rlD"/>
+                                                        <outlet property="time" destination="jDQ-WA-C1B" id="R2l-aW-WSe"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
