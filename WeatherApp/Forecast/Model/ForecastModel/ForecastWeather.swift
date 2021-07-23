@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Weather
 struct ForecastWeather: Codable {
     let id: Int
-    let main: MainEnum
+    let main: String
     let description: String
     let icon: String
 

@@ -13,25 +13,19 @@ struct DateForecastViewModel {
     
     init(dt: Int, timeForecast: [TimeForecastViewModel]) {
         let dateFormat = DateFormatter()
-//        dateFormat.timeZone = TimeZone(abbreviation: "THA") //Set timezone that you want
         dateFormat.locale = NSLocale.current
         dateFormat.dateFormat = "EEEE"
         let date = Date(timeIntervalSince1970: TimeInterval(dt))
         let strDate = dateFormat.string(from: date)
-        print("dateforcast: \(dt)")
-        
         var usedTimeForecast: [TimeForecastViewModel] = []
         
         self.date = strDate
-//        print(date)
         for item in timeForecast {
             if item.date == strDate {
                 usedTimeForecast.append(item)
             }
         }
-//        print(usedTimeForecast.count)
         self.timeForecasts = usedTimeForecast
-//        self.timeForecasts = timeForecast
     }
 }
 
@@ -42,10 +36,8 @@ struct TimeForecastViewModel {
     let temp: String
     
     init(dt: Int, icon: String, temp: Double) {
-        print("timeforcast: \(dt)")
         let dateFormat = DateFormatter()
         let date2Format = DateFormatter()
-//        dateFormat.timeZone = TimeZone(abbreviation: "THA") //Set timezone that you want
         dateFormat.locale = NSLocale.current
         date2Format.locale = NSLocale.current
         dateFormat.dateFormat = "hh:mm a"
@@ -56,7 +48,6 @@ struct TimeForecastViewModel {
         
         let imageURL = "https://openweathermap.org/img/wn/\(icon)@2x.png"
          
-        1625767200
         let temperature = temp - Double(273.15)
         let temp2d = Double(round(10*temperature)/10)
         
